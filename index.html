@@ -1,0 +1,362 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0b0b">
+  <meta name="description" content="Xens Company — criação de conteúdo, vídeos, redes sociais e soluções digitais para marcas.">
+  <title>Xens Company | Criatividade que gera resultados</title>
+
+  <style>
+    :root {
+      --bg: #0b0b0b;
+      --panel: #151515;
+      --orange: #ff6a00;
+      --white: #f7f7f7;
+      --muted: #b0b0b0;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--white);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1120px, 90%); margin: auto; }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      background: #0b0b0bed;
+      border-bottom: 1px solid #292929;
+      backdrop-filter: blur(10px);
+    }
+    nav {
+      min-height: 76px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    .logo { font-size: 1.4rem; font-weight: 900; letter-spacing: 1px; }
+    .logo span, .orange { color: var(--orange); }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 22px; font-size: .92rem; }
+    .nav-links a:hover, footer a:hover { color: var(--orange); }
+    .hero { padding: 110px 0 100px; }
+    .eyebrow {
+      color: var(--orange);
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 3px;
+      font-size: .8rem;
+    }
+    h1 { font-size: clamp(2.8rem, 8vw, 5.8rem); line-height: 1.02; margin: 18px 0; }
+    h2 { font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.1; }
+    .hero p, .section-intro { max-width: 650px; color: var(--muted); font-size: 1.1rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .button {
+      display: inline-block;
+      padding: 13px 20px;
+      border: 1px solid var(--orange);
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    .button.primary { background: var(--orange); color: #111; }
+    .button:hover { transform: translateY(-2px); }
+    section { padding: 75px 0; border-top: 1px solid #202020; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 32px; }
+    .card {
+      background: var(--panel);
+      border: 1px solid #282828;
+      border-radius: 10px;
+      padding: 25px;
+    }
+    .card h3 { margin-top: 0; }
+    .card p { color: var(--muted); }
+    .tag {
+      display: inline-block;
+      color: var(--orange);
+      background: #ff6a0017;
+      padding: 4px 9px;
+      border-radius: 4px;
+      font-size: .8rem;
+      margin-bottom: 12px;
+    }
+    .contact-panel {
+      background: linear-gradient(135deg, #1b1b1b, #101010);
+      border: 1px solid #303030;
+      border-left: 4px solid var(--orange);
+      padding: clamp(25px, 5vw, 55px);
+      border-radius: 10px;
+    }
+    .socials { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+    footer { padding: 30px 0 100px; color: var(--muted); font-size: .9rem; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 16px; margin: 15px 0; }
+    .cookie-banner {
+      position: fixed;
+      z-index: 20;
+      bottom: 16px;
+      left: 16px;
+      right: 16px;
+      max-width: 850px;
+      margin: auto;
+      padding: 22px;
+      background: #191919;
+      border: 1px solid #444;
+      border-radius: 10px;
+      box-shadow: 0 10px 40px #0009;
+    }
+    .cookie-banner p { color: var(--muted); margin-top: 5px; }
+    .cookie-buttons { display: flex; flex-wrap: wrap; gap: 9px; }
+    .cookie-buttons button {
+      cursor: pointer;
+      background: #252525;
+      color: white;
+      border: 1px solid #555;
+      border-radius: 5px;
+      padding: 10px 13px;
+    }
+    .cookie-buttons .accept { background: var(--orange); color: #111; border-color: var(--orange); }
+    .cookie-banner a { text-decoration: underline; }
+    .legal { display: none; }
+    .legal:target { display: block; }
+    @media (max-width: 760px) {
+      nav { align-items: flex-start; flex-direction: column; padding: 15px 0; }
+      .nav-links { gap: 12px; }
+      .hero { padding: 75px 0; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <nav class="container">
+    <a class="logo" href="#inicio">XENS<span> COMPANY</span></a>
+    <div class="nav-links">
+      <a href="#sobre">Sobre</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#clientes">Clientes</a>
+      <a href="#contato">Contato</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" id="inicio">
+    <div class="container">
+      <div class="eyebrow">Criatividade • Estratégia • Conteúdo</div>
+      <h1>Ideias fortes.<br><span class="orange">Marcas memoráveis.</span></h1>
+      <p>
+        A Xens Company transforma ideias em conteúdo visual e experiências
+        digitais para marcas que querem se destacar.
+      </p>
+      <div class="actions">
+        <a class="button primary" href="#projetos">Conheça nosso trabalho</a>
+        <a class="button" href="#contato">Solicite um orçamento</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre">
+    <div class="container">
+      <div class="eyebrow">Quem somos</div>
+      <h2>Comunicação com <span class="orange">personalidade.</span></h2>
+      <p class="section-intro">
+        Unimos criatividade, produção de conteúdo e estratégia para ajudar
+        empresas e profissionais a apresentarem seu melhor lado.
+        Cada projeto começa entendendo a marca e os objetivos do cliente.
+      </p>
+    </div>
+  </section>
+
+  <section id="servicos">
+    <div class="container">
+      <div class="eyebrow">O que fazemos</div>
+      <h2>Nossos serviços</h2>
+      <div class="grid">
+        <article class="card">
+          <span class="tag">01 / Conteúdo</span>
+          <h3>Gestão de redes sociais</h3>
+          <p>Planejamento de conteúdo, posts e stories para fortalecer a presença digital da sua marca.</p>
+        </article>
+        <article class="card">
+          <span class="tag">02 / Audiovisual</span>
+          <h3>Vídeos e Reels</h3>
+          <p>Vídeos criativos para apresentar produtos, divulgar serviços e aproximar marcas do público.</p>
+        </article>
+        <article class="card">
+          <span class="tag">03 / Design</span>
+          <h3>Identidade visual</h3>
+          <p>Peças gráficas e materiais de comunicação alinhados à personalidade do negócio.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="projetos">
+    <div class="container">
+      <div class="eyebrow">Portfólio</div>
+      <h2>Projetos em destaque</h2>
+      <p class="section-intro">Uma seleção de trabalhos e conteúdos produzidos pela Xens Company.</p>
+      <div class="grid">
+        <article class="card">
+          <span class="tag">Móveis planejados</span>
+          <h3>Villa Mobile</h3>
+          <p>Conteúdos para apresentar ambientes, projetos e a experiência da marca.</p>
+          <a class="orange" href="#contato">Ver projeto em breve ↗</a>
+        </article>
+        <article class="card">
+          <span class="tag">Alimentação</span>
+          <h3>Maju Lanches</h3>
+          <p>Comunicação visual e conteúdos para destacar produtos e despertar desejo.</p>
+          <a class="orange" href="#contato">Ver projeto em breve ↗</a>
+        </article>
+        <article class="card">
+          <span class="tag">Seu próximo projeto</span>
+          <h3>Vamos criar juntos?</h3>
+          <p>Este espaço pode apresentar outro cliente, uma campanha ou um vídeo de destaque.</p>
+          <a class="orange" href="#contato">Fale com a gente ↗</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="clientes">
+    <div class="container">
+      <div class="eyebrow">Parcerias</div>
+      <h2>Marcas com quem trabalhamos</h2>
+      <div class="grid">
+        <article class="card"><h3>Villa Mobile</h3><p>Móveis planejados</p></article>
+        <article class="card"><h3>Maju Lanches</h3><p>Alimentação</p></article>
+        <article class="card"><h3>Sua marca aqui</h3><p>Vamos construir essa parceria?</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato">
+    <div class="container">
+      <div class="contact-panel">
+        <div class="eyebrow">Vamos conversar</div>
+        <h2>Seu próximo projeto começa <span class="orange">aqui.</span></h2>
+        <p class="section-intro">Entre em contato para apresentar sua ideia e solicitar um orçamento.</p>
+        <div class="actions">
+          <!-- Substitua o número abaixo pelo WhatsApp comercial com código do país e DDD. -->
+          <a class="button primary" href="https://wa.me/5500000000000" target="_blank" rel="noopener">Falar pelo WhatsApp</a>
+          <a class="button" href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+          <a class="button" href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="legal" id="privacidade">
+    <div class="container">
+      <h2>Política de privacidade</h2>
+      <p>Esta página é um modelo inicial e deve ser revisada conforme os recursos realmente utilizados no site.</p>
+      <p>Este protótipo não inclui formulários de cadastro nem ferramentas de análise de terceiros. Se esses recursos forem adicionados, esta política deverá explicar quais dados são coletados, para quais finalidades, por quanto tempo são mantidos e como o titular pode exercer seus direitos previstos na LGPD.</p>
+      <p>Contato para solicitações de privacidade: adicione aqui um e-mail comercial válido antes de publicar.</p>
+    </div>
+  </section>
+
+  <section class="legal" id="direitos">
+    <div class="container">
+      <h2>Direitos autorais</h2>
+      <p>© <span id="year"></span> Xens Company. Todos os direitos reservados.</p>
+      <p>Textos, vídeos, fotografias, marcas e demais materiais pertencem aos respectivos titulares. A publicação de projetos de clientes deve respeitar as autorizações e os direitos aplicáveis.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="logo">XENS<span> COMPANY</span></div>
+    <div class="footer-links">
+      <a href="#privacidade">Privacidade</a>
+      <a href="#direitos">Direitos autorais</a>
+      <a href="#" id="cookie-settings">Configurar cookies</a>
+    </div>
+    <p>© <span id="footer-year"></span> Xens Company. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Preferências de cookies" hidden>
+  <strong>Suas preferências de cookies</strong>
+  <p>Este site utiliza armazenamento local para lembrar sua escolha de cookies. Neste protótipo não há ferramentas de publicidade ou análise instaladas. Leia nossa <a href="#privacidade">política de privacidade</a>.</p>
+  <div class="cookie-buttons">
+    <button class="accept" id="accept-all">Aceitar todos</button>
+    <button id="reject-optional">Rejeitar opcionais</button>
+    <button id="customize">Personalizar</button>
+  </div>
+  <div id="cookie-options" hidden>
+    <p><label><input type="checkbox" checked disabled> Cookies essenciais (sempre ativos)</label></p>
+    <p><label><input type="checkbox" id="analytics"> Cookies de análise (opcionais)</label></p>
+    <button id="save-preferences">Salvar preferências</button>
+  </div>
+</div>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+  document.getElementById("footer-year").textContent = new Date().getFullYear();
+
+  const banner = document.getElementById("cookie-banner");
+  const options = document.getElementById("cookie-options");
+  const analytics = document.getElementById("analytics");
+  const consentKey = "xens_cookie_preferences";
+
+  function showCookieBanner() {
+    banner.hidden = false;
+  }
+
+  function saveConsent(value) {
+    localStorage.setItem(consentKey, JSON.stringify({
+      necessary: true,
+      analytics: value,
+      savedAt: new Date().toISOString()
+    }));
+    banner.hidden = true;
+    options.hidden = true;
+  }
+
+  try {
+    if (!localStorage.getItem(consentKey)) showCookieBanner();
+  } catch (error) {
+    showCookieBanner();
+  }
+
+  document.getElementById("accept-all").addEventListener("click", () => {
+    saveConsent(true);
+  });
+
+  document.getElementById("reject-optional").addEventListener("click", () => {
+    saveConsent(false);
+  });
+
+  document.getElementById("customize").addEventListener("click", () => {
+    options.hidden = !options.hidden;
+  });
+
+  document.getElementById("save-preferences").addEventListener("click", () => {
+    saveConsent(analytics.checked);
+  });
+
+  document.getElementById("cookie-settings").addEventListener("click", (event) => {
+    event.preventDefault();
+    try {
+      const saved = JSON.parse(localStorage.getItem(consentKey) || "{}");
+      analytics.checked = saved.analytics === true;
+    } catch (error) {
+      analytics.checked = false;
+    }
+    showCookieBanner();
+    options.hidden = false;
+  });
+</script>
+</body>
+</html>
